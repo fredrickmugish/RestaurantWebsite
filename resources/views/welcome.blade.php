@@ -14,7 +14,7 @@
     <body class="antialiased">
       
         <div class="flex justify-center items-center h-screen">
-            <h1 class="text-3xl text-purple-600 font-bold">Laravel 9 Vite with Tailwind CSS</h1>
+            <h1 class="text-3xl text-purple-600 font-bold">Laravel Restaurant Website</h1>
         </div>
 
     </body>
