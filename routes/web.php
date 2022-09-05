@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Admin\AdminController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\MenuController;
+use App\Http\Controllers\Admin\CategoryController;
 
 
 /*
@@ -26,6 +28,9 @@ Route::get('/dashboard', function () {
 Route::middleware(['auth', 'admin'])->name('admin.')->prefix('admin')->group(function(){
 
     Route::get('/', [AdminController::class, 'index'])->name('index');
+    Route::resource('/categories', CategoryController::class);
+    Route::resource('/menus', MenuController::class);
+
 
 
 
