@@ -27,7 +27,10 @@
                             class="block w-full appearance-none bg-white border-gray-400"/>
                         </div>
                         </div>
-               
+                        @error('name')
+                        <div class="text-sm text-red-600">{{ $message }}</div>
+                         @enderror
+                    
                       
                         <div class="sm:col-span-6">
                             <label for="image" class="block text-sm font-medium text-gray-700">Image</label>
@@ -39,7 +42,10 @@
                                 class="block w-full appearance-none bg-white border-gray-400"/>
                             </div>
                             </div>
-               
+                            @error('image')
+                            <div class="text-sm text-red-600">{{ $message }}</div>
+                             @enderror
+                        
                            
                             <div class="sm:col-span-6 pt-5">
                                 <label for="description" class="block text-sm font-medium text-gray-700">Description</label>
@@ -50,6 +56,12 @@
                                 </textarea>
                                 </div>
                                 </div>
+                                @error('description')
+                                <div class="text-sm text-red-600">{{ $message }}</div>
+                                 @enderror
+                            
+
+
                                 <div class="mt-6 p-4">
                                 <button type="submit" class="px-4 py-2 bg-indigo-500 hover:bg-indigo-700 rounded-lg text-white">Update</button>
                                 </div>

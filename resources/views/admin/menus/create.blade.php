@@ -27,6 +27,10 @@
                         class="block w-full appearance-none bg-white border-gray-400"/>
                     </div>
                     </div>
+                    @error('name')
+                    <div class="text-sm text-red-600">{{ $message }}</div>
+                     @enderror
+                
            
                   
                     <div class="sm:col-span-6">
@@ -36,6 +40,10 @@
                             class="block w-full appearance-none bg-white border-gray-400"/>
                         </div>
                         </div>
+                        @error('image')
+                        <div class="text-sm text-red-600">{{ $message }}</div>
+                         @enderror
+                    
            
 
                           
@@ -46,6 +54,10 @@
                         class="shadow-sm focus:ring-indigo-500 appearance-none bg-white border-gray-400 rounded-md py-2 px-3 "/>
                     </div>
                     </div>
+                    @error('price')
+                    <div class="text-sm text-red-600">{{ $message }}</div>
+                     @enderror
+                
 
                        
                         <div class="sm:col-span-6 pt-5">
@@ -56,6 +68,10 @@
                             </textarea>
                             </div>
                             </div>
+                            @error('description')
+                            <div class="text-sm text-red-600">{{ $message }}</div>
+                             @enderror
+                        
 
 
                             <div class="sm:col-span-6 pt-5">

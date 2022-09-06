@@ -25,7 +25,12 @@
                             <input type="text" id="name" name="name"
                             class="block w-full appearance-none bg-white border-gray-400"/>
                         </div>
-                        </div>
+                    </div>
+                     @error('name')
+                     <div class="text-sm text-red-600">{{ $message }}</div>
+                      @enderror
+                 
+
                
                       
                         <div class="sm:col-span-6">
@@ -35,6 +40,10 @@
                                 class="block w-full appearance-none bg-white border-gray-400"/>
                             </div>
                             </div>
+                            @error('image')
+                            <div class="text-sm text-red-600">{{ $message }}</div>
+                             @enderror
+                        
                
                            
                             <div class="sm:col-span-6 pt-5">
@@ -45,6 +54,10 @@
                                 </textarea>
                                 </div>
                                 </div>
+                                @error('description')
+                                <div class="text-sm text-red-600">{{ $message }}</div>
+                                 @enderror
+                            
                                 <div class="mt-6 p-4">
                                 <button type="submit" class="px-4 py-2 bg-indigo-500 hover:bg-indigo-700 rounded-lg text-white">Store</button>
                                 </div>
