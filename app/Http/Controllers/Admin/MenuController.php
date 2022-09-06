@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Models\Menu;
+use App\Models\Category;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\MenuStoreRequest;
 
 class MenuController extends Controller
 {
@@ -25,7 +27,8 @@ class MenuController extends Controller
      */
     public function create()
     {
-        return view('admin.menus.create');
+        $categories = Category::all();
+        return view('admin.menus.create', compact('categories'));
     }
 
     /**
@@ -34,9 +37,22 @@ class MenuController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(MenuStoreRequest $request)
     {
-        //
+        $image=$request->file('image')->store('public/menus');
+
+       Menu::create([
+
+            'name'=>$request->name,
+            'description' =>$request->description,
+            'image' => $image,
+            'price' =>$request->price
+
+             ]);
+     
+             return to_route('admin.menus.index');
+
+
     }
 
     /**
